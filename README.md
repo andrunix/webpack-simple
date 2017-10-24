@@ -57,6 +57,11 @@ Get the copy that ships with the version of DX9 you are running. In my case, thi
 * Add the appropriate script to your PATH. If you are using Windows command prompt, use sp.bat. If you are using Linux, OSX, or git bash on Windows, use sp.sh
 * Edit the sp-config.json in this directory to include the server name, username, and password. Yes, this password is stored in plain text. Guard it! Keep this file in the same directory with the binary. Each portlet will have its own version that keeps the portlet-specific information like the WCM id.
 
+### Script Application Links
+
+* [Render Parameter Tags](https://www.ibm.com/support/knowledgecenter/en/SSYJ99_8.5.0/script-portlet/render_param_tags.html)
+* [spHelper](https://www.ibm.com/support/knowledgecenter/en/SSYJ99_8.5.0/script-portlet/cmd_line_api.html)
+* [Add tokens to generate unique namespace IDs](https://www.ibm.com/support/knowledgecenter/en/SSYJ99_8.5.0/script-portlet/cmd_line_push_cmd_patt_rep.html)
 
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader). Also check out the [breaking changes in vue-loader@9.0.0](https://github.com/vuejs/vue-loader/releases/tag/v9.0.0).
