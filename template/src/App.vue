@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="{{portletId}}">
     <h1>\{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style{{#sass}} lang="scss"{{/sass}}>
-#app {
+#{{portletId}} {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
