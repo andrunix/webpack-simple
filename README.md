@@ -12,7 +12,7 @@ push the Script Application to the Portal Server, you need to take a
 few preliminary steps. 
 
 1. Have access to a Portal Server
-2. Have the sp command line utility configured on your local machine
+2. Have the sp command line utility configured on your local machine [see below](#sp-setup)
 3. Add a new Script Application to the Portal Page where you would like it to run
 4. Download (export) the Script Application, or minimally the sp-config.json file 
 5. Copy the sp-config.json from step 4 to this project's sp directory
@@ -23,11 +23,25 @@ few preliminary steps.
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
 
 ``` bash
+# One time only, install vue-cli
 $ npm install -g vue-cli
+
+# Create a new Vue project using the vue cli and this template
 $ vue init andrunix/webpack-simple my-project
+
 $ cd my-project
+
+# Install all the dependencies
 $ npm install
+
+# Run the development environment. 
+# Starts the dev server and opens page in the default browser
 $ npm run dev
+
+# When you are ready to push to the server, compile your changes
+$ npm run build
+
+# Push your bundled code to the server
 $ npm run push
 ```
 
@@ -39,11 +53,9 @@ $ npm run push
 
 - `npm run push`: Push your script application to WPS/DX
 
+*Note that before you can run the push command, you need to have completed the sp command line setup and fulfilled all the other prerequisites.*
 
-Note that before you can run the push command, you need to have completed the sp command line setup and fulfilled all the other prerequisites.
-
-
-## sp setup
+(#sp-setup)
 
 Setting up the sp command line utility is fairly easy. DO NOT DOWNLOAD FROM THE INTERNET.
 Get the copy that ships with the version of DX9 you are running. In my case, this was in:
