@@ -55,7 +55,7 @@ $ npm run push
 
 *Note that before you can run the push command, you need to have completed the sp command line setup and fulfilled all the other prerequisites.*
 
-(#sp-setup)
+#sp-setup
 
 Setting up the sp command line utility is fairly easy. DO NOT DOWNLOAD FROM THE INTERNET.
 Get the copy that ships with the version of DX9 you are running. In my case, this was in:
