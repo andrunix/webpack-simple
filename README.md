@@ -71,6 +71,7 @@ Get the copy that ships with the version of DX9 you are running. In my case, thi
 
 ### Script Application Links
 
+* [Script Application Docs](https://www.ibm.com/support/knowledgecenter/en/SSYJ99_8.5.0/script-portlet/build_apps.html)
 * [Render Parameter Tags](https://www.ibm.com/support/knowledgecenter/en/SSYJ99_8.5.0/script-portlet/render_param_tags.html)
 * [spHelper](https://www.ibm.com/support/knowledgecenter/en/SSYJ99_8.5.0/script-portlet/cmd_line_api.html)
 * [Add tokens to generate unique namespace IDs](https://www.ibm.com/support/knowledgecenter/en/SSYJ99_8.5.0/script-portlet/cmd_line_push_cmd_patt_rep.html)
