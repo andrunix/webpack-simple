@@ -35,6 +35,47 @@ npm run push
 
 Note that before you can run the push command, you need to have completed the sp command line setup and fulfilled all the other prerequisites.
 
+## webpack setup
+
+This project uses Webpack for development and production builds. The configuration
+uses an ejs template (index.template.ejs) for the index.html. This means that the
+index.html file from your script application is replaced by this template when you 
+build for production `npm run build`.
+
+This allows you to customize the index.html for development vs. production. For example,
+in production, we assume some things are provided by the theme. So we don't want to bundle
+them in this index.html. Bootstrap being an example. So in the template, we add Bootstrap
+but it is surrounded by an if statement checking for the existence of dev-specific parameters.
+
+These are provided in the HtmlWebpackPlugin options. 
+
+``` javascript
+  ...
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'index.template.ejs',
+      inject: 'body',
+      devOptions: {
+          user: 'g100050'
+      }
+    })
+    
+    ...
+  ]
+
+```
+
+Then, in the index.template.ejs file, you can conditionally include code based 
+on the presence of this devOptions value. For example:
+
+``` html
+
+    <% if (htmlWebpackPlugin.options.devOptions) { %>
+    <span id="theme-userid"><%= htmlWebpackPlugin.options.devOptions.user %></span>
+    <% } %>
+
+```
 
 ## sp setup
 

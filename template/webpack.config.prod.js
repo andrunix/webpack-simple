@@ -1,11 +1,16 @@
 var path = require('path')
 var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [ 'babel-polyfill', './src/main.js'],
+  // entry: {
+    // 'babel-polyfill': ['babel-polyfill'],
+    // main: './src/main.js',
+  // },
   output: {
     path: path.resolve(__dirname, './sp/dist'),
-    publicPath: '/sp/dist/',
+    publicPath: 'dist/',
     filename: 'build.js'
   },
   module: {
@@ -15,13 +20,6 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            {{#sass}}
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
-            'scss': 'vue-style-loader!css-loader!sass-loader',
-            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-            {{/sass}}
           }
           // other vue-loader options go here
         }
@@ -40,6 +38,25 @@ module.exports = {
       }
     ]
   },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.template.ejs',
+      inject: 'body',
+      filename: '../index.html'
+    })
+    /*
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'babel-polyfill',
+      filename: 'vendor.js',
+      minChunks: function(module, count) {
+        var context = module.context;
+        console.log('context: ', context);
+        // return context && context.indexOf('babel') >= 0;
+        return context && context.indexOf('node_modules') >= 0;
+      }
+    })*/
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
