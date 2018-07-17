@@ -20,9 +20,20 @@
     
   </head>
   <body>
-    <% if (htmlWebpackPlugin.options.devOptions) { %>
+    <%
+      if (htmlWebpackPlugin.options.devOptions) {
+      // anything in this block is only rendered if the Webpack options
+      // define a 'devOptions' attribute. This allows us to mock portal
+      // functions or content here in this ejs file.
+      %>
+    <div class="container">
     <span id="theme-userid"><%= htmlWebpackPlugin.options.devOptions.user %></span>
     <% } %>
     <div id="{{portletId}}"></div>
+    <%
+      if (htmlWebpackPlugin.options.devOptions) {
+      %>
+    </div>
+    <% } %>
   </body>
 </html>

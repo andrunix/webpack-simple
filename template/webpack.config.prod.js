@@ -86,6 +86,9 @@ if (process.env.NODE_ENV === 'production') {
       sourceMap: true,
       compress: {
         warnings: false
+      },
+      output: {
+        max_line_len: 8000
       }
     }),
     new webpack.LoaderOptionsPlugin({
