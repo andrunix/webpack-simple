@@ -7,7 +7,22 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js --open-page sp/index.html --hot",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js --progress --hide-modules",
-    "push": "cd sp && sp push && cd .."
+    "push": "cd sp && sp push && cd ..",
+    "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "npm run lint -- --fix",
+    "unit": "jest",
+    "test": "npm run lint && npm run unit"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      ".*\\.(vue)$": "vue-jest"
+    }
   },
   "dependencies": {
     "axios": "^0.17.0",
@@ -16,17 +31,29 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
+    "eslint": "^5.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-html": "^4.0.5",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "file-loader": "^1.1.4",
+    "jest": "^23.4.1",
     {{#sass}}
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     {{/sass}}
     "html-webpack-plugin": "^2.30.1",
+    "vue-jest": "^2.6.0",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
